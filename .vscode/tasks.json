@@ -1,0 +1,33 @@
+{
+    "version":"2.0.0",
+    "tasks":[
+        {
+            "label": "cliCompile",
+
+            "type": "shell",
+            "command": "arduino-cli compile --build-path ${workspaceFolder}\\build --build-cache-path ${workspaceFolder}\\temp  --build-property compiler.cpp.extra_flags=-Wno-invalid-offsetof --clean --libraries D:\\Arduino\\VSCode\\libraries --fqbn rp2040:rp2040:rpipico ${workspaceFolder}",
+            "problemMatcher": []
+        },  
+        {
+            "label": "cliUpload",
+          
+            "type": "shell",
+            "command": "arduino-cli compile --build-path ${workspaceFolder}\\build --build-cache-path ${workspaceFolder}\\temp --clean --upload --port E: -v  --fqbn rp2040:rp2040:rpipico ${workspaceFolder}",
+            "problemMatcher": []
+        },
+        {
+            "label": "listBoards",
+          
+            "type": "shell",
+            "command": "  arduino-cli board list --timeout 10s",
+            "problemMatcher": []
+        },            
+        {
+            "label": "listCores",
+            "detail":"ctrl+alt+i",
+            "type": "shell",
+            "command": "arduino-cli core list",
+            "problemMatcher": []
+        }
+    ]
+}
